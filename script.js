@@ -3,7 +3,6 @@ function submit1()
 {
     var localStorageData = localStorage.getItem('data');
     var id = document.getElementById('item').value;
-    // console.log(id.value);
     if(localStorage.getItem('edit'))
     {
         let localStorageedit = JSON.parse(localStorage.getItem('edit'));
@@ -12,13 +11,12 @@ function submit1()
         console.log(idx);
         localStorageData[idx]=id;
         console.log(localStorageData);
-        // localStorage.setItem('data', JSON.stringify(localStorageData));
         localStorage.removeItem('edit');
     }
     
     else
     {
-        if(id.value=="")
+        if(id=='')
         {
             alert('please enter the list');
             return;
